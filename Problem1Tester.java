@@ -71,7 +71,28 @@ public class Problem1Tester {
 	// Precondition: list is already sorted in chronological order.
 	public static void insert(ArrayList<CalendarDate> list, CalendarDate date)
 	{
-
+		for (int i = 0; i < list.size(); ++i) 
+		{
+			if (date.compareTo(list.get(i)) <= 0)
+			{
+				if (i == 0) 
+				{
+					list.add(0, date);
+					break;
+				}
+				else 
+				{
+					list.add(i - 1, date);
+					break;
+				}
+			}
+			if (i == list.size() - 1 && date.compareTo(list.get(i)) > 0) 
+			{
+				list.add(date);
+			}
+			
+			
+		}
 
 
 
