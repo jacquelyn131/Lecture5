@@ -12,58 +12,61 @@ public class Problem1Tester {
 		CalendarDate date;
 		
 		ArrayList<CalendarDate> list1 = new ArrayList<CalendarDate>();
+		date = new CalendarDate(5, 7, 10);
+		list1.add(date);
 
 		System.out.println("Inserting 10 different dates...\n");
+		System.out.println("test: " + myString(list1));
 
 		date = new CalendarDate(3, 16, 1978);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 	
 		date = new CalendarDate(1, 25, 1984);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(6, 8, 2003);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(3, 12, 1942);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(8, 13, 1978);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(1, 28, 1984);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(4, 25, 1942);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(12, 8, 2003);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(10, 3, 2003);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 		
 		date = new CalendarDate(8, 14, 1978);
 		System.out.println("Inserting " + date + "...");
 		insert(list1, date);
-		System.out.println("CURRENT ARRAYLIST:\n" + list1 + "\n");
+		System.out.println("CURRENT ARRAYLIST:\n" + myString(list1) + "\n");
 
 	}
 
@@ -97,6 +100,15 @@ public class Problem1Tester {
 
 
 
+	}
+	public static String myString(ArrayList<CalendarDate> lst) 
+	{
+		String str = "";
+		for (int i = 0; i < lst.size(); ++i) 
+		{
+			str = str + lst.get(i).toString() + ", ";
+		}
+		return str;
 	}
 
 }
