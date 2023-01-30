@@ -12,7 +12,7 @@ public class Problem1Tester {
 		CalendarDate date;
 		
 		ArrayList<CalendarDate> list1 = new ArrayList<CalendarDate>();
-		date = new CalendarDate(5, 7, 10);
+		date = new CalendarDate(5, 7, 2010);
 		list1.add(date);
 
 		System.out.println("Inserting 10 different dates...\n");
@@ -76,7 +76,9 @@ public class Problem1Tester {
 	{
 		for (int i = 0; i < list.size(); ++i) 
 		{
-			if (date.compareTo(list.get(i)) <= 0)
+
+			//three cases: date is before ith element, after, or equal
+			if (date.compareTo(list.get(i)) < 0) // if date is after the ith element, insert right before i
 			{
 				if (i == 0) 
 				{
@@ -85,14 +87,35 @@ public class Problem1Tester {
 				}
 				else 
 				{
-					list.add(i - 1, date);
+					list.add(0, date);
+					break;
+				}
+				
+			}
+			else if (date.compareTo(list.get(i)) > 0)  // if date is before the ith element
+			{
+				if (i == list.size() - 1) 
+				{
+					list.add(date);
 					break;
 				}
 			}
-			if (i == list.size() - 1 && date.compareTo(list.get(i)) > 0) 
+			// if date is equal to the ith element
+			else if (date.compareTo(list.get(i)) == 0)
 			{
-				list.add(date);
+				if (i == 0)
+				{
+					list.add(0, date);
+					break;
+				}
+				else 
+				{
+					list.add(0, date);
+					break;
+				}
+				
 			}
+			
 			
 			
 		}
